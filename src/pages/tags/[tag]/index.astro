@@ -10,7 +10,7 @@ export async function getStaticPaths() {
 
   const tags = getUniqueTags(posts);
 
-  return tags.map(({ tag, tagName }) => {
+  return tags.flatMap(({ tag, tagName }) => {
     return {
       params: { tag },
       props: { tag, tagName, posts },

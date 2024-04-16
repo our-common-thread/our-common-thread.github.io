@@ -13,7 +13,7 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
 
   const tags = getUniqueTags(posts);
 

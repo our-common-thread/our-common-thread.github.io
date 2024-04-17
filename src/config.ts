@@ -1,19 +1,19 @@
-import type { Site, SocialObjects } from "./types";
+import type { Site, SocialObjects } from './types';
 
 export const SITE: Site = {
-  website: "https://shemming.github.io/",
-  author: "Sabrina Hemming",
-  desc: "A portfolio of fabric art projects and creative pursuits.",
-  title: "Our.Common.Thread",
-  ogImage: "astropaper-og.jpg",
+  website: 'https://shemming.github.io/',
+  author: 'Sabrina Hemming',
+  desc: 'A portfolio of fabric art projects and creative pursuits.',
+  title: 'Our.Common.Thread',
+  // ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
 export const LOCALE = {
-  lang: "en", // html lang code. Set this empty and default will be "en"
-  langTag: ["en-EN"], // BCP 47 Language Tags. Set this empty [] to use the environment default
+  lang: 'en', // html lang code. Set this empty and default will be "en"
+  langTag: ['en-EN'], // BCP 47 Language Tags. Set this empty [] to use the environment default
 } as const;
 
 export const LOGO_IMAGE = {
@@ -25,122 +25,122 @@ export const LOGO_IMAGE = {
 
 export const SOCIALS: SocialObjects = [
   {
-    name: "Github",
-    href: "",
+    name: 'Github',
+    href: '',
     linkTitle: ` ${SITE.title} on Github`,
     active: false,
   },
   {
-    name: "Facebook",
-    href: "",
+    name: 'Facebook',
+    href: '',
     linkTitle: `${SITE.title} on Facebook`,
     active: false,
   },
   {
-    name: "Instagram",
-    href: "https://www.instagram.com/our.common.thread/",
+    name: 'Instagram',
+    href: 'https://www.instagram.com/our.common.thread/',
     linkTitle: `${SITE.title} on Instagram`,
     active: true,
   },
   {
-    name: "LinkedIn",
-    href: "",
+    name: 'LinkedIn',
+    href: '',
     linkTitle: `${SITE.title} on LinkedIn`,
     active: false,
   },
   {
-    name: "Mail",
-    href: "mailto:yourmail@gmail.com",
+    name: 'Mail',
+    href: 'mailto:yourmail@gmail.com',
     linkTitle: `Send an email to ${SITE.title}`,
     active: false,
   },
   {
-    name: "Twitter",
-    href: "",
+    name: 'Twitter',
+    href: '',
     linkTitle: `${SITE.title} on Twitter`,
     active: false,
   },
   {
-    name: "Twitch",
-    href: "",
+    name: 'Twitch',
+    href: '',
     linkTitle: `${SITE.title} on Twitch`,
     active: false,
   },
   {
-    name: "YouTube",
-    href: "",
+    name: 'YouTube',
+    href: '',
     linkTitle: `${SITE.title} on YouTube`,
     active: false,
   },
   {
-    name: "WhatsApp",
-    href: "",
+    name: 'WhatsApp',
+    href: '',
     linkTitle: `${SITE.title} on WhatsApp`,
     active: false,
   },
   {
-    name: "Snapchat",
-    href: "",
+    name: 'Snapchat',
+    href: '',
     linkTitle: `${SITE.title} on Snapchat`,
     active: false,
   },
   {
-    name: "Pinterest",
-    href: "",
+    name: 'Pinterest',
+    href: '',
     linkTitle: `${SITE.title} on Pinterest`,
     active: false,
   },
   {
-    name: "TikTok",
-    href: "",
+    name: 'TikTok',
+    href: '',
     linkTitle: `${SITE.title} on TikTok`,
     active: false,
   },
   {
-    name: "CodePen",
-    href: "",
+    name: 'CodePen',
+    href: '',
     linkTitle: `${SITE.title} on CodePen`,
     active: false,
   },
   {
-    name: "Discord",
-    href: "",
+    name: 'Discord',
+    href: '',
     linkTitle: `${SITE.title} on Discord`,
     active: false,
   },
   {
-    name: "GitLab",
-    href: "",
+    name: 'GitLab',
+    href: '',
     linkTitle: `${SITE.title} on GitLab`,
     active: false,
   },
   {
-    name: "Reddit",
-    href: "",
+    name: 'Reddit',
+    href: '',
     linkTitle: `${SITE.title} on Reddit`,
     active: false,
   },
   {
-    name: "Skype",
-    href: "",
+    name: 'Skype',
+    href: '',
     linkTitle: `${SITE.title} on Skype`,
     active: false,
   },
   {
-    name: "Steam",
-    href: "",
+    name: 'Steam',
+    href: '',
     linkTitle: `${SITE.title} on Steam`,
     active: false,
   },
   {
-    name: "Telegram",
-    href: "",
+    name: 'Telegram',
+    href: '',
     linkTitle: `${SITE.title} on Telegram`,
     active: false,
   },
   {
-    name: "Mastodon",
-    href: "",
+    name: 'Mastodon',
+    href: '',
     linkTitle: `${SITE.title} on Mastodon`,
     active: false,
   },

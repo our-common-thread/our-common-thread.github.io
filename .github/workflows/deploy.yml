@@ -17,8 +17,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ env.PUBLIC_GOOGLE_SITE_VERIFICATION }}
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4

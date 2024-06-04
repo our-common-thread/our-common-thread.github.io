@@ -15,4 +15,4 @@ tags:
 
 Material: Cotton yarn
 
-Source: [Cloud Gallery](https://www.instagram.com/p/CuH8nclvVeG/?hl=en&img_index=3)
+Source: <a href="https://www.instagram.com/p/CuH8nclvVeG/?hl=en&img_index=3" target="_blank">Cloud Gallery</a>

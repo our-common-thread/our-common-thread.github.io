@@ -39,6 +39,8 @@ Here is the list of frontmatter property for each post.
 
 > Tip! You can get ISO 8601 datetime by running `new Date().toISOString()` in the console. Make sure you remove quotes though.
 
+> Real one: `date -u +"%Y-%m-%dT%H:%M:%SZ"`
+
 Only `title`, `description` and `pubDatetime` fields in frontmatter must be specified.
 
 Title and description (excerpt) are important for search engine optimization (SEO) and thus AstroPaper encourages to include these in blog posts.
@@ -54,7 +56,7 @@ If you omit `tags` in a blog post (in other words, if no tag is specified), the 
 export const blogSchema = z.object({
   // ---
   draft: z.boolean().optional(),
-  tags: z.array(z.string()).default(["others"]), // replace "others" with whatever you want
+  tags: z.array(z.string()).default(['others']), // replace "others" with whatever you want
   // ---
 });
 ```
@@ -76,7 +78,7 @@ tags:
   - some
   - example
   - tags
-ogImage: ""
+ogImage: ''
 description: This is the example description of the example post.
 canonicalURL: https://example.org/my-article-was-already-posted-here
 ---

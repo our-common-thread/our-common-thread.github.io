@@ -32,12 +32,14 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
       <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
       <p>{description}</p>
       {cover && coverAlt && (
-        <img
-          src={cover.src}
-          width={cover.width}
-          height={cover.height}
-          alt={coverAlt}
-        />
+        <a href={href} className='prose'>
+          <img
+            src={cover.src}
+            width={cover.width}
+            height={cover.height}
+            alt={coverAlt}
+          />
+        </a>
       )}
     </li>
   );

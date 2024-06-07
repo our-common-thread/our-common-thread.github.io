@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2024-06-04T02:54:41Z
+pubDatetime: 2024-06-04T02:54:41:000Z
 title: Desire
 description: "'Desire' as featured in the Queer As Hill 2023 Show"
 cover: '@assets/images/queer-as-hill-2023/desire.jpg'

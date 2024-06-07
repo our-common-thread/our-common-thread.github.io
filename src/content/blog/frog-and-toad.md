@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2024-06-07T04:30:17Z
+pubDatetime: 2024-06-07T04:30:17:000Z
 title: Frog & Toad
 description: 'Tapestry of Frog and Toad on a small hilltop'
 cover: '@assets/images/frog-and-toad/frog-and-toad.jpg'

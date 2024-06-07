@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "our.common.thread",
   "version": "4.2.0",
   "scripts": {
     "dev": "astro dev",

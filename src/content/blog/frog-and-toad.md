@@ -12,10 +12,10 @@ tags:
 
 ![Frog and Toad](@assets/images/frog-and-toad/frog-and-toad.jpg)
 
-Material: Cotton yarn
-
-Frame locally sourced
+<p>Materials: </br>
+    - Cotton yarn </br>
+    - Frame locally sourced
+</p>
 
 Reference:
-
 ![Frog and Toad Illustration](@assets/images/frog-and-toad/reference.jpg)

@@ -1,10 +1,11 @@
 ---
 title: Tapestry Crochet Techniques
 author: Sabrina Hemming
-pubDatetime: 2024-04-19T21:03:30:000Z
+pubDatetime: 2024-04-19T21:03:30Z
+modDateTime:
+draft: false
 slug: tapestry-crochet-text
 featured: false
-draft: false
 tags:
   - crochet
   - technique

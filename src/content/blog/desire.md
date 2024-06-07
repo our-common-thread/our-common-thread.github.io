@@ -1,6 +1,8 @@
 ---
-pubDatetime: 2024-06-04T02:54:41:000Z
 title: Desire
+pubDatetime: 2024-06-04T02:54:41Z
+modDatetime: 2024-06-07T07:36:19Z
+draft: false
 description: "'Desire' as featured in the Queer As Hill 2023 Show"
 cover: '@assets/images/queer-as-hill-2023/desire.jpg'
 coverAlt: 'a crochet tapestry with a purple background and a line drawing of a person wearing a small gold chain with top surgery scars'

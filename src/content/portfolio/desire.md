@@ -14,6 +14,8 @@ tags:
 ---
 
 ![Desire](@assets/images/queer-as-hill-2023/desire.jpg)
+
+![Desire at Cloud Gallery](@assets/images/queer-as-hill-2023/desire-gallery.jpg)
 Source: <a href="https://www.instagram.com/p/CuH8nclvVeG/?hl=en&img_index=3" target="_blank">Cloud Gallery</a>
 
 ![Artist with the art](@assets/images/queer-as-hill-2023/artist-pose.jpg)

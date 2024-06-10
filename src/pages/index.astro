@@ -1,18 +1,20 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
-import LinkButton from "@components/LinkButton.astro";
-import Hr from "@components/Hr.astro";
-import Card from "@components/Card";
-import Socials from "@components/Socials.astro";
-import getSortedPosts from "@utils/getSortedPosts";
-import { SOCIALS } from "@config";
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import LinkButton from '@components/LinkButton.astro';
+import Hr from '@components/Hr.astro';
+import Card from '@components/Card';
+import Socials from '@components/Socials.astro';
+import { getSortedPosts } from '@utils/getSortedPosts';
+import { SOCIALS } from '@config';
 
-const posts = await getCollection("blog");
+const posts = await getCollection('posts');
+let portfolio = await getCollection('portfolio');
 
 const sortedPosts = getSortedPosts(posts);
+let sortedPortfolio = getSortedPosts(portfolio);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
@@ -21,8 +23,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
 <Layout>
   <Header />
-  <main id="main-content">
-    <section id="hero">
+  <main id='main-content'>
+    <section id='hero'>
       <p>
         Welcome! I am Beans, a passionate fiber artist with a special dedication
         to crochet. Enjoy this collection of my latest creative endeavors.
@@ -31,8 +33,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
+          <div class='social-wrapper'>
+            <div class='social-links'>Social Link{socialCount > 1 && 's'}:</div>
             <Socials />
           </div>
         )
@@ -44,7 +46,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     {
       featuredPosts.length > 0 && (
         <>
-          <section id="featured">
+          <section id='featured'>
             <h2>Featured</h2>
             <ul>
               {featuredPosts.map(({ data, slug }) => (
@@ -62,8 +64,37 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     }
 
     {
+      sortedPortfolio.length > 0 && (
+        <section id='portfolio-posts'>
+          <h2>Portfolio Pieces</h2>
+          <ul>
+            {sortedPortfolio.map(
+              ({ data, slug }, index) =>
+                index < 4 && (
+                  <Card
+                    href={`/portfolio/${slug}/`}
+                    frontmatter={data}
+                    secHeading={false}
+                    details={false}
+                  />
+                )
+            )}
+          </ul>
+          <div class='all-posts-btn-wrapper'>
+            <LinkButton href='/portfolio/'>
+              All Portfolio Pieces
+              <svg xmlns='http://www.w3.org/2000/svg'>
+                <path d='m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z' />
+              </svg>
+            </LinkButton>
+          </div>
+        </section>
+      )
+    }
+
+    {
       recentPosts.length > 0 && (
-        <section id="recent-posts">
+        <section id='recent-posts'>
           <h2>Recent Posts</h2>
           <ul>
             {recentPosts.map(
@@ -81,12 +112,12 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       )
     }
 
-    <div class="all-posts-btn-wrapper">
-      <LinkButton href="/posts/">
+    <div class='all-posts-btn-wrapper'>
+      <LinkButton href='/posts/'>
         All Posts
-        <svg xmlns="http://www.w3.org/2000/svg"
+        <svg xmlns='http://www.w3.org/2000/svg'
           ><path
-            d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+            d='m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z'
           ></path>
         </svg>
       </LinkButton>
@@ -122,11 +153,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
-  #recent-posts {
+  #recent-posts,
+  #portfolio-posts {
     @apply pb-6 pt-12;
   }
   #featured h2,
-  #recent-posts h2 {
+  #recent-posts h2,
+  #portfolio-posts h2 {
     @apply text-2xl font-semibold tracking-wide;
   }
   .all-posts-btn-wrapper {

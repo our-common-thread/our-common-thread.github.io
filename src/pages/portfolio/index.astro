@@ -1,0 +1,18 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { getSortedPosts } from '@utils/getSortedPosts';
+import getPagination from '@utils/getPagination';
+import Portfolio from '@layouts/Portfolio.astro';
+
+const posts = await getCollection('portfolio');
+
+const sortedPosts = getSortedPosts(posts) as CollectionEntry<'portfolio'>[];
+
+const pagination = getPagination({
+  posts: sortedPosts,
+  page: 1,
+  isIndex: true,
+});
+---
+
+<Portfolio {...pagination} />

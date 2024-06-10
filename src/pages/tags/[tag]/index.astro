@@ -6,24 +6,29 @@ import getPagination from '@utils/getPagination';
 import getUniqueTags from '@utils/getUniqueTags';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  const portfolio = await getCollection('portfolio', ({ data }) => !data.draft);
 
-  const tags = getUniqueTags(posts);
+  const tags = getUniqueTags(posts).concat(getUniqueTags(portfolio));
 
   return tags.flatMap(({ tag, tagName }) => {
     return {
       params: { tag },
-      props: { tag, tagName, posts },
+      props: { tag, tagName, posts, portfolio },
     };
   });
 }
 
-const { tag, tagName, posts } = Astro.props;
+const { tag, tagName, posts, portfolio } = Astro.props;
 
 const postsByTag = getPostsByTag(posts, tag);
+const portfolioByTag = getPostsByTag(portfolio, tag);
+
+// portfolio matches will always show up on top
+const allPostsByTag = portfolioByTag.concat(postsByTag);
 
 const pagination = getPagination({
-  posts: postsByTag,
+  posts: allPostsByTag,
   page: 1,
   isIndex: true,
 });

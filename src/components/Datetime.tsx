@@ -3,17 +3,20 @@ import { LOCALE } from '@config';
 interface DatetimesProps {
   pubDatetime: string | Date;
   modDatetime: string | Date | undefined | null;
+  displayTime?: boolean;
 }
 
 interface Props extends DatetimesProps {
   size?: 'sm' | 'lg';
   className?: string;
+  displayTime?: boolean;
 }
 
 export default function Datetime({
   pubDatetime,
   modDatetime,
   size = 'sm',
+  displayTime = true,
   className,
 }: Props) {
   return (
@@ -39,13 +42,18 @@ export default function Datetime({
         <FormattedDatetime
           pubDatetime={pubDatetime}
           modDatetime={modDatetime}
+          displayTime={displayTime}
         />
       </span>
     </div>
   );
 }
 
-const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
+const FormattedDatetime = ({
+  pubDatetime,
+  modDatetime,
+  displayTime = true,
+}: DatetimesProps) => {
   const myDatetime = new Date(
     modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime
   );
@@ -55,6 +63,14 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
     month: 'short',
     day: 'numeric',
   });
+
+  if (!displayTime) {
+    return (
+      <>
+        <time dateTime={myDatetime.toISOString()}>{date}</time>
+      </>
+    );
+  }
 
   const time = myDatetime.toLocaleTimeString(LOCALE.langTag, {
     hour: '2-digit',

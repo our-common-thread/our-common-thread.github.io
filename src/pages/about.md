@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About"
+title: 'About'
 ---
 
 Welcome! I am Beans, a passionate fiber artist with a special dedication

@@ -38,4 +38,10 @@ const pagination = getPagination({
 });
 ---
 
-{post ? <PostDetails post={post} /> : <Posts {...pagination} />}
+{
+  post ? (
+    <PostDetails post={post} />
+  ) : (
+    <Posts {...pagination} collectionType='posts' />
+  )
+}

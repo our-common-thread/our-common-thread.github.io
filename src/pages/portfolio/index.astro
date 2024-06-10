@@ -2,7 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { getSortedPosts } from '@utils/getSortedPosts';
 import getPagination from '@utils/getPagination';
-import Portfolio from '@layouts/Portfolio.astro';
+import Posts from '@layouts/Posts.astro';
 
 const posts = await getCollection('portfolio');
 
@@ -15,4 +15,4 @@ const pagination = getPagination({
 });
 ---
 
-<Portfolio {...pagination} />
+<Posts {...pagination} collectionType='portfolio' />

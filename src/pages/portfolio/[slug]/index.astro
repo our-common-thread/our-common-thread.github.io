@@ -3,8 +3,8 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import { getSortedPosts } from '@utils/getSortedPosts';
 import getPageNumbers from '@utils/getPageNumbers';
 import getPagination from '@utils/getPagination';
-import PortfolioList from '@layouts/PortfolioList.astro';
 import PortfolioDetails from '@layouts/PortfolioDetails.astro';
+import Posts from '@layouts/Posts.astro';
 
 export interface Props {
   post: CollectionEntry<'portfolio'>;
@@ -38,4 +38,10 @@ const pagination = getPagination({
 });
 ---
 
-{post ? <PortfolioDetails post={post} /> : <PortfolioList {...pagination} />}
+{
+  post ? (
+    <PortfolioDetails post={post} />
+  ) : (
+    <Posts {...pagination} collectionType='portfolio' />
+  )
+}

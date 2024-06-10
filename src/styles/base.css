@@ -28,7 +28,7 @@
     --color-card-muted: 239, 216, 176;
     --color-border: 220, 152, 145;
   }
-  html[data-theme="dark"] {
+  html[data-theme='dark'] {
     --color-fill: 33, 39, 55;
     --color-text-base: 234, 237, 243;
     --color-accent: 235, 63, 211;
@@ -37,11 +37,11 @@
     --color-border: 100, 36, 81;
   }
   #sun-svg,
-  html[data-theme="dark"] #moon-svg {
+  html[data-theme='dark'] #moon-svg {
     display: none;
   }
   #moon-svg,
-  html[data-theme="dark"] #sun-svg {
+  html[data-theme='dark'] #sun-svg {
     display: block;
   }
   body {

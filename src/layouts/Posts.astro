@@ -23,7 +23,7 @@ const { currentPage, totalPages, paginatedPosts, collectionType } = Astro.props;
   <Main
     pageTitle={collectionType.charAt(0).toUpperCase() + collectionType.slice(1)}
   >
-    <ul>
+    <ul class={collectionType === 'portfolio' ? 'portfolio' : null}>
       {
         paginatedPosts.map(({ data, slug, collection }) => (
           <Card
@@ -45,3 +45,9 @@ const { currentPage, totalPages, paginatedPosts, collectionType } = Astro.props;
 
   <Footer noMarginTop={totalPages > 1} />
 </Layout>
+
+<style>
+  .grid-style {
+    @apply grid-cols-2 grid-flow-col gap-2;
+  }
+</style>

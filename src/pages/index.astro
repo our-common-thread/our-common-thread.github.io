@@ -67,7 +67,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       sortedPortfolio.length > 0 && (
         <section id='portfolio-posts'>
           <h2>Portfolio Pieces</h2>
-          <ul>
+          <ul class='portfolio'>
             {sortedPortfolio.map(
               ({ data, slug }, index) =>
                 index < 4 && (

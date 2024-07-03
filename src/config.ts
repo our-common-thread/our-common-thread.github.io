@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: 'Sabrina Hemming',
   desc: 'A portfolio of fabric art projects and creative pursuits.',
   title: 'Our.Common.Thread',
-  // ogImage: "astropaper-og.jpg",
+  ogImage: 'assets/logo.png',
   lightAndDarkMode: true,
   postPerPage: 6,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
@@ -17,10 +17,10 @@ export const LOCALE = {
 } as const;
 
 export const LOGO_IMAGE = {
-  enable: false,
-  svg: true,
-  width: 216,
-  height: 46,
+  enable: true,
+  svg: false,
+  width: 50,
+  height: 50,
 };
 
 export const SOCIALS: SocialObjects = [

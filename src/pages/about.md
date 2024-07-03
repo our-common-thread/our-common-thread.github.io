@@ -16,3 +16,9 @@ Fiber art techniques I have experience with:
 - Visible Mending
 - Knitting
 - Sewing
+
+## Commissions
+
+I am currently open for select commissions. Serious inquiries only please!
+
+our.common.thread.art@gmail.com

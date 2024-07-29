@@ -1,11 +1,11 @@
 import type { Site, SocialObjects } from './types';
 
 export const SITE: Site = {
-  website: 'https://shemming.github.io/',
-  author: 'Sabrina Hemming',
+  website: 'https://our-common-thread.github.io/',
+  author: 'Beans',
   desc: 'A portfolio of fabric art projects and creative pursuits.',
-  title: 'Our.Common.Thread',
-  ogImage: 'assets/logo.png',
+  title: 'Our Common Thread',
+  ogImage: 'assets/logo_full.png',
   lightAndDarkMode: true,
   postPerPage: 6,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
@@ -19,8 +19,8 @@ export const LOCALE = {
 export const LOGO_IMAGE = {
   enable: true,
   svg: false,
-  width: 50,
-  height: 50,
+  width: 250,
+  height: 250,
 };
 
 export const SOCIALS: SocialObjects = [

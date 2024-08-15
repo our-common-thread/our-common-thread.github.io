@@ -17,7 +17,7 @@ const { activeNav } = Astro.props;
       <a href='/' class='logo whitespace-nowrap'>
         {
           LOGO_IMAGE.enable ? (
-            <div class='flex gap-5 items-center'>
+            <div class='flex gap-5 items-center size-12 md:size-full'>
               <img
                 src={`/assets/${LOGO_IMAGE.svg ? 'logo_full.svg' : 'logo_full.png'}`}
                 alt={SITE.title}

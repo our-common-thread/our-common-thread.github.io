@@ -1,3 +1,4 @@
+import type patternStoreIcons from '@assets/patternStoreIcons';
 import type socialIcons from '@assets/socialIcons';
 
 export type Site = {
@@ -16,4 +17,10 @@ export type SocialObjects = {
   href: string;
   active: boolean;
   linkTitle: string;
+}[];
+
+export type PatternStoreObjects = {
+  name: keyof typeof patternStoreIcons;
+  href: string;
+  active: boolean;
 }[];

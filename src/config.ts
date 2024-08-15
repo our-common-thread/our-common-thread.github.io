@@ -1,4 +1,4 @@
-import type { Site, SocialObjects } from './types';
+import type { PatternStoreObjects, Site, SocialObjects } from './types';
 
 export const SITE: Site = {
   website: 'https://our-common-thread.github.io/',
@@ -143,5 +143,18 @@ export const SOCIALS: SocialObjects = [
     href: '',
     linkTitle: `${SITE.title} on Mastodon`,
     active: false,
+  },
+];
+
+export const PATTERNS: PatternStoreObjects = [
+  {
+    name: 'Ribblr',
+    href: 'https://ribblr.com/shop/our-common-thread/?referrer=443329',
+    active: true,
+  },
+  {
+    name: 'Ravelry',
+    href: 'https://www.ravelry.com/stores/our-common-thread',
+    active: true,
   },
 ];

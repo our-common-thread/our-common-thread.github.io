@@ -1,0 +1,31 @@
+---
+import { PATTERNS } from '@config';
+import LinkButton from './LinkButton.astro';
+import patternStoreIcons from '@assets/patternStoreIcons';
+
+export interface Props {
+  centered?: boolean;
+}
+
+const { centered = false } = Astro.props;
+---
+
+<div class={`store-icons ${centered ? 'flex' : ''}`}>
+  {
+    PATTERNS.filter(store => store.active).map(store => (
+      <LinkButton href={store.href} className='link-button' title={store.name}>
+        <Fragment set:html={patternStoreIcons[store.name]} />
+        <span class='sr-only'>{store.name}</span>
+      </LinkButton>
+    ))
+  }
+</div>
+
+<style>
+  .store-icons {
+    @apply flex-wrap justify-center gap-1;
+  }
+  .link-button {
+    @apply p-2 hover:rotate-6 sm:p-1;
+  }
+</style>

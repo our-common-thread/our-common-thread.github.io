@@ -25,13 +25,22 @@ const { currentPage, totalPages, paginatedPosts, collectionType } = Astro.props;
   >
     <ul class={collectionType === 'portfolio' ? 'portfolio' : null}>
       {
-        paginatedPosts.map(({ data, slug, collection }) => (
-          <Card
-            href={`/${collection}/${slug}/`}
-            frontmatter={data}
-            details={collectionType !== 'portfolio'}
-          />
-        ))
+        paginatedPosts.map(({ data, slug, collection }, index) =>
+          index < 2 ? (
+            <Card
+              href={`/${collection}/${slug}/`}
+              frontmatter={data}
+              details={collectionType !== 'portfolio'}
+              lazyLoad={false}
+            />
+          ) : (
+            <Card
+              href={`/${collection}/${slug}/`}
+              frontmatter={data}
+              details={collectionType !== 'portfolio'}
+            />
+          )
+        )
       }
     </ul>
   </Main>

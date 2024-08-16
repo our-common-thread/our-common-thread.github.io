@@ -13,15 +13,15 @@ const blogObj = (image: ImageFunction) =>
     tags: z.array(z.string()).default(['others']),
     ogImage: image()
       .refine(img => img.width >= 500 && img.height >= 500, {
-        message: 'OpenGraph image must be at least 1200 X 630 pixels!',
+        message: 'OpenGraph image must be at least 500 X 500 pixels!',
       })
       .or(z.string())
       .optional(),
     description: z.string(),
     canonicalURL: z.string().optional(),
     cover: image()
-      .refine(img => img.width >= 800 && img.height >= 800, {
-        message: 'OpenGraph image must be at least 1200 X 800 pixels!',
+      .refine(img => img.width >= 600 && img.height >= 600, {
+        message: 'OpenGraph image must be at least 800 X 800 pixels!',
       })
       .optional(),
     coverAlt: z.string().optional(),

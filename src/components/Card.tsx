@@ -7,6 +7,7 @@ export interface Props {
   frontmatter: CollectionEntry<'posts' | 'portfolio'>['data'];
   secHeading?: boolean;
   details?: boolean;
+  lazyLoad?: boolean;
 }
 
 export default function Card({
@@ -14,6 +15,7 @@ export default function Card({
   frontmatter,
   secHeading = true,
   details = true,
+  lazyLoad = true,
 }: Props) {
   const { title, pubDatetime, modDatetime, description, cover, coverAlt } =
     frontmatter;
@@ -45,6 +47,7 @@ export default function Card({
       {cover && coverAlt && (
         <a href={href} className='prose'>
           <img
+            loading={lazyLoad ? 'lazy' : 'eager'}
             src={cover.src}
             width={cover.width}
             height={cover.height}

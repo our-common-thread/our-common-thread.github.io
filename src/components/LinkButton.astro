@@ -23,6 +23,7 @@ const { href, className, ariaLabel, title, disabled = false } = Astro.props;
   ) : (
     <a
       {href}
+      target='_blank'
       class={`group inline-block hover:text-skin-accent ${className}`}
       aria-label={ariaLabel}
       title={title}

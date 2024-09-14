@@ -57,7 +57,7 @@
     display: block;
   }
   body {
-    @apply flex min-h-[100svh] sm:px-5 flex-col bg-skin-fill font-mono text-skin-base 
+    @apply flex min-h-[100svh] sm:px-5 flex-col bg-skin-fill font-serif text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
   section,

@@ -157,4 +157,9 @@ export const PATTERNS: PatternStoreObjects = [
     href: 'https://www.ravelry.com/stores/our-common-thread',
     active: true,
   },
+  {
+    name: 'Ko-Fi',
+    href: 'https://ko-fi.com/ourcommonthread',
+    active: true,
+  },
 ];

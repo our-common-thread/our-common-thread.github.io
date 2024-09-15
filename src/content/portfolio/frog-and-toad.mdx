@@ -1,0 +1,41 @@
+---
+title: Frog & Toad
+pubDatetime: 2024-06-07T04:30:17Z
+modDateTime:
+draft: false
+description: 'Tapestry of Frog and Toad on a small hilltop'
+cover: '@assets/images/frog-and-toad/frog-and-toad.jpg'
+coverAlt: 'a crochet tapestry with frog and toad in the left forefront back to back, some foliage behind them. To the right is a sunset over the hills. Tapestry is in an ornate green frame with gold detailing.'
+tags:
+  - crochet
+  - tapestry crochet
+  - original
+---
+
+import { Image } from 'astro:assets';
+import frogtoad from '../../assets/images/frog-and-toad/frog-and-toad.jpg';
+import reference from '../../assets/images/frog-and-toad/reference.jpg';
+
+<Image
+  inferSize
+  class='inline-block max-w-lg'
+  src={frogtoad}
+  alt='a crochet tapestry with frog and toad in the left forefront back to back, some foliage behind them. To the right is a sunset over the hills. Tapestry is in an ornate green frame with gold detailing'
+/>
+
+<p> Reference: </p>
+
+<Image
+  inferSize
+  class='inline-block max-w-lg'
+  src={reference}
+  alt='Reference Illustration'
+/>
+
+<p>
+  Materials:
+  <ul>
+    <li> Cotton yarn </li>
+    <li> Frame locally sourced </li>
+  </ul>
+</p>

@@ -26,10 +26,10 @@ export default function Card({
   };
 
   return (
-    <li className='my-6'>
+    <li className='my-6 inline-block'>
       <a
         href={href}
-        className='inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0'
+        className='text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0'
       >
         {secHeading ? (
           <h2 {...headerProps}>{title}</h2>
@@ -47,6 +47,7 @@ export default function Card({
       {cover && coverAlt && (
         <a href={href} className='prose'>
           <img
+            className='max-w-md md:max-w-xl'
             loading={lazyLoad ? 'lazy' : 'eager'}
             src={cover.src}
             width={cover.width}

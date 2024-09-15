@@ -15,11 +15,20 @@ tags:
   - submission
 ---
 
-![Pierced at Cloud Gallery](@assets/images/queer-as-hill-2024/pierced-gallery.jpg)
+import { Image } from 'astro:assets';
+import gallery from '../../assets/images/queer-as-hill-2024/pierced-gallery.jpg';
 
-![Pierced](@assets/images/queer-as-hill-2024/pierced.jpg)
+<Image
+  inferSize
+  class='inline-block max-w-lg'
+  src={gallery}
+  alt='Pierced at Cloud Gallery: a crochet tapestry with a light breen background. There is an ear defined using embroidery and crochet, with 6 crocheted piercings going through the tapestry'
+/>
 
-Materials:
-
-- cotton yarn
-- wire
+<p>
+  Materials:
+  <ul>
+    <li>cotton yarn</li>
+    <li>wire</li>
+  </ul>
+</p>

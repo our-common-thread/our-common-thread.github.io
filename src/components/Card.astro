@@ -1,0 +1,54 @@
+---
+import { slugifyStr } from '@utils/slugify';
+import Datetime from './Datetime';
+import ImageWrap from './ImageWrap.astro';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  href?: string;
+  frontmatter: CollectionEntry<'posts' | 'portfolio'>['data'];
+  secHeading?: boolean;
+  details?: boolean;
+}
+
+const { href, frontmatter, secHeading, details } = Astro.props;
+const { title, pubDatetime, modDatetime, description, cover, coverAlt } =
+  frontmatter;
+
+const headerProps = {
+  style: { viewTransitionName: slugifyStr(title) },
+  className: 'text-lg font-medium decoration-dashed hover:underline',
+};
+---
+
+<li class='my-6 inline-block'>
+  <a
+    href={href}
+    class='text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0'
+  >
+    {
+      secHeading ? (
+        <h2 {...headerProps}>{title}</h2>
+      ) : (
+        <h3 {...headerProps}>{title}</h3>
+      )
+    }
+  </a>
+
+  {
+    details && (
+      <div>
+        <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
+        <p>{description}</p>
+      </div>
+    )
+  }
+
+  {
+    cover && (
+      <a href={href} class='prose'>
+        <ImageWrap src={cover} alt={coverAlt} />
+      </a>
+    )
+  }
+</li>

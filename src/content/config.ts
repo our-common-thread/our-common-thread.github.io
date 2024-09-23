@@ -21,7 +21,7 @@ const blogObj = (image: ImageFunction) =>
     canonicalURL: z.string().optional(),
     cover: image()
       .refine(img => img.width >= 600 && img.height >= 600, {
-        message: 'OpenGraph image must be at least 800 X 800 pixels!',
+        message: 'OpenGraph image must be at least 600 X 600 pixels!',
       })
       .optional(),
     coverAlt: z.string().optional(),

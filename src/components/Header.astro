@@ -2,12 +2,14 @@
 import { LOGO_IMAGE, SITE } from '@config';
 import Hr from './Hr.astro';
 import LinkButton from './LinkButton.astro';
+import { Image } from 'astro:assets';
 
 export interface Props {
   activeNav?: 'posts' | 'tags' | 'about' | 'search' | 'portfolio';
 }
 
 const { activeNav } = Astro.props;
+import logo from '../../public/assets/logo-full.svg';
 ---
 
 <header>
@@ -17,9 +19,9 @@ const { activeNav } = Astro.props;
       <a href='/' class='logo whitespace-nowrap'>
         {
           LOGO_IMAGE.enable ? (
-            <div class='flex gap-5 items-center size-12 md:size-full'>
-              <img
-                src={`/assets/${LOGO_IMAGE.svg ? 'logo-full.svg' : 'logo-full.png'}`}
+            <div class='flex size-12 items-center gap-5 md:size-full'>
+              <Image
+                src={logo}
                 alt={SITE.title}
                 width={LOGO_IMAGE.width}
                 height={LOGO_IMAGE.height}

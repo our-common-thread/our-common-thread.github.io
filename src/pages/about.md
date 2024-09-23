@@ -23,9 +23,7 @@ Sustainability is also an important part of my practice. When possible, material
 
 ## Commissions
 
-I will have a booth at CHASM on October 19th, 12-6pm!
+I will have a booth at CHASM on October 19th, 12-6pm! <br/>
 Location: <a href="https://www.google.com/maps/place/Quality+Flea+Center/@47.622726,-122.3148778,17z/data=!3m1!4b1!4m6!3m5!1s0x5490158f5f9432a1:0x5bab91fb5d22fdc7!8m2!3d47.6227224!4d-122.3123029!16s%2Fg%2F11y7cd8swm?entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D" target="_blank">Quality Flea Center</a>, 415 15th Ave E, Seattle, WA
 
-I am currently open for select commissions. Serious inquiries only please! You can also reach me at my <a href="https://ko-fi.com/ourcommonthread" target="_blank">Ko-Fi</a>
-
-our.common.thread.art@gmail.com
+I am currently open for select commissions. Serious inquiries only please! You can reach me at my <a href="https://ko-fi.com/ourcommonthread" target="_blank">Ko-Fi</a> or send me an email at our.common.thread.art@gmail.com.

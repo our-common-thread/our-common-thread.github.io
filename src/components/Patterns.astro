@@ -13,7 +13,12 @@ const { centered = false } = Astro.props;
 <div class={`store-icons ${centered ? 'flex' : ''}`}>
   {
     PATTERNS.filter(store => store.active).map(store => (
-      <LinkButton href={store.href} className='link-button' title={store.name}>
+      <LinkButton
+        newTab
+        href={store.href}
+        className='link-button'
+        title={store.name}
+      >
         <Fragment set:html={patternStoreIcons[store.name]} />
         <span class='sr-only'>{store.name}</span>
       </LinkButton>

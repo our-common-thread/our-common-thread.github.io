@@ -20,8 +20,9 @@ import reference from '../../assets/images/bold-and-brash/bold-and-brash-ref.jpg
 Want to make it yourself? The pattern can be found <a href="https://ribblr.com/pattern/bold-and-brash-Crochet?referrer=443329" target="_blank">here</a>!
 
 <Image
-  inferSize
-  class='inline-block max-w-lg'
+  widths={[240, 540, 720, bold.width]}
+  sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${bold.width}px`}
+  class='inline-block'
   src={bold}
   alt='Bold and Brash: a crochet tapestry with a vibrant orange background and a groovy blue squid'
 />
@@ -29,8 +30,9 @@ Want to make it yourself? The pattern can be found <a href="https://ribblr.com/p
 Reference Photo:
 
 <Image
-  inferSize
-  class='inline-block max-w-lg'
+  widths={[240, 540, 720, reference.width]}
+  sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${reference.width}px`}
+  class='inline-block'
   src={reference}
   alt='Reference photo of squidward holding Bold and Brash up next to his face and smiling'
 />

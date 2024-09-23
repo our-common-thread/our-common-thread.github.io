@@ -1,0 +1,21 @@
+---
+export interface Props {
+  src: ImageMetadata;
+  alt: string;
+}
+const { src, alt } = Astro.props;
+
+import { Image } from 'astro:assets';
+---
+
+{
+  (
+    <Image
+      widths={[240, 540, 720, src.width]}
+      sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${src.width}px`}
+      class='inline-block'
+      src={src}
+      alt={alt}
+    />
+  )
+}

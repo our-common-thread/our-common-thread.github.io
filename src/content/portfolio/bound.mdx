@@ -1,7 +1,7 @@
 ---
 title: Bound
 pubDatetime: 2024-09-21T02:54:41Z
-modDatetime: 
+modDatetime:
 draft: false
 description: "An artist's rendition of a binder with a shibari inverted star design"
 cover: '../../assets/images/bound/bound-front.jpg'
@@ -12,26 +12,20 @@ tags:
   - original
 ---
 
-import { Image } from 'astro:assets';
+import ImageWrap from '../../components/ImageWrap.astro';
 import bound_front from '../../assets/images/bound/bound-front.jpg';
 import bound_back from '../../assets/images/bound/bound-back.jpg';
 import bound_hanging from '../../assets/images/bound/bound-hanging.jpg';
 
-<Image
-  inferSize
-  class='inline-block max-w-lg'
+<ImageWrap
   src={bound_front}
   alt='the front of a crochet black binder a tan colorwork design mimicking the shibari inverted star harness'
 />
-<Image
-  inferSize
-  class='inline-block max-w-lg'
+<ImageWrap
   src={bound_back}
   alt='the back of a crochet black binder a tan colorwork design mimicking the shibari inverted star harness'
 />
-<Image
-  inferSize
-  class='inline-block max-w-lg'
+<ImageWrap
   src={bound_hanging}
   alt="a crochet black binder a tan colorwork design mimicking the shibari inverted star harness hanging from a person's arm"
 />

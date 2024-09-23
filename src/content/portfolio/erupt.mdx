@@ -12,16 +12,12 @@ tags:
   - original
 ---
 
-import { Image } from 'astro:assets';
+import ImageWrap from '../../components/ImageWrap.astro';
 import volcano from '../../assets/images/abstract-volcano.jpg';
 
-<Image
-  inferSize
-  class='inline-block max-w-lg'
+<ImageWrap
   src={volcano}
   alt='Tapestry of an abstract volcano - A red curved base intersected by a green cone flipped on its point and a yellow squiggle inside that'
 />
 
-<p>
-  Materials: cotton yarn
-</p>
+<p>Materials: cotton yarn</p>

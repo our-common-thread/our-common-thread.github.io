@@ -14,21 +14,14 @@ tags:
   - submission
 ---
 
-import { Image } from 'astro:assets';
+import ImageWrap from '../../components/ImageWrap.astro';
 import botc from '../../assets/images/queer-as-hill-2024/BotC.jpg';
 import gallery from '../../assets/images/queer-as-hill-2024/BotC-gallery.jpg';
 
-<Image
-  inferSize
-  class='inline-block max-w-lg'
+<ImageWrap
   src={botc}
   alt='Blood of the Covenant: a crochet tapestry with a light purple background. There is a scalpel and syringe crossed over each other forming an X. Cross stitched over them is the phrase "BLOOD OF THE COVENANT"'
 />
-<Image
-  inferSize
-  class='inline-block max-w-lg'
-  src={gallery}
-  alt='Blood of the Covenant at Cloud Gallery'
-/>
+<ImageWrap src={gallery} alt='Blood of the Covenant at Cloud Gallery' />
 
 Materials: cotton yarn

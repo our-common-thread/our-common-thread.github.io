@@ -8,9 +8,12 @@ import { SITE } from './src/config';
 
 import mdx from '@astrojs/mdx';
 
+import playformCompress from '@playform/compress';
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  compressHTML: true,
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -18,6 +21,7 @@ export default defineConfig({
     react(),
     sitemap(),
     mdx(),
+    playformCompress(),
   ],
   markdown: {
     remarkPlugins: [

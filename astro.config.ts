@@ -10,6 +10,8 @@ import mdx from '@astrojs/mdx';
 
 import playformCompress from '@playform/compress';
 
+import icon from 'astro-icon';
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -22,6 +24,7 @@ export default defineConfig({
     sitemap(),
     mdx(),
     playformCompress(),
+    icon(),
   ],
   markdown: {
     remarkPlugins: [

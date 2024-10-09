@@ -1,0 +1,15 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  link: string;
+}
+const { link } = Astro.props;
+---
+
+<p>
+  Want to make it yourself?
+  <a href={link} target='_blank'>
+    Get the pattern<Icon class='size-3 align-super' name='mdi:external-link' />
+  </a>
+</p>

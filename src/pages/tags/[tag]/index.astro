@@ -7,9 +7,9 @@ import getUniqueTags from '@utils/getUniqueTags';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
-  const portfolio = await getCollection('portfolio', ({ data }) => !data.draft);
+  const portfolio = await getCollection('portfolio');
 
-  const tags = getUniqueTags(posts).concat(getUniqueTags(portfolio));
+  let tags = getUniqueTags(posts, portfolio);
 
   return tags.flatMap(({ tag, tagName }) => {
     return {

@@ -11,7 +11,7 @@ import { SITE } from '@config';
 const posts = await getCollection('posts');
 const portfolio = await getCollection('portfolio');
 
-let tags = getUniqueTags(posts).concat(getUniqueTags(portfolio));
+let tags = getUniqueTags(posts, portfolio);
 ---
 
 <Layout title={`Tags | ${SITE.title}`}>

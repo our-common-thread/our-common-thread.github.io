@@ -25,7 +25,7 @@ const { currentPage, totalPages, paginatedPosts, collectionType } = Astro.props;
   >
     <ul class={collectionType === 'portfolio' ? 'portfolio' : null}>
       {
-        paginatedPosts.map(({ data, slug, collection }, index) =>
+        paginatedPosts.map(({ data, slug, collection }: any, index: number) =>
           index < 2 ? (
             <Card
               href={`/${collection}/${slug}/`}

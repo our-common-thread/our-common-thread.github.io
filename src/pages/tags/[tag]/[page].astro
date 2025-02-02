@@ -14,12 +14,14 @@ export interface Props {
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
+  const portfolio = await getCollection('portfolio');
 
-  const tags = getUniqueTags(posts);
+  const tags = getUniqueTags(posts, portfolio);
 
   return tags.flatMap(({ tag, tagName }) => {
     const tagPosts = getPostsByTag(posts, tag);
-    const totalPages = getPageNumbers(tagPosts.length);
+    const tagPortfolio = getPostsByTag(portfolio, tag);
+    const totalPages = getPageNumbers(tagPosts.length + tagPortfolio.length);
 
     return totalPages.map(page => ({
       params: { tag, page },
@@ -32,11 +34,16 @@ const { page } = Astro.params;
 const { tag, tagName } = Astro.props;
 
 const posts = await getCollection('posts', ({ data }) => !data.draft);
+const portfolio = await getCollection('portfolio');
 
 const postsByTag = getPostsByTag(posts, tag);
+const portfolioByTag = getPostsByTag(portfolio, tag);
+
+// portfolio matches will always show up on top
+const allPostsByTag = portfolioByTag.concat(postsByTag);
 
 const pagination = getPagination({
-  posts: postsByTag,
+  posts: allPostsByTag,
   page,
 });
 ---

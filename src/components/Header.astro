@@ -9,28 +9,26 @@ export interface Props {
 }
 
 const { activeNav } = Astro.props;
-import logo from '../../public/assets/logo-full.svg';
+import logo from '../../public/assets/logo-mini.svg';
 ---
 
 <header>
   <a id='skip-to-content' href='#main-content'>Skip to content</a>
   <div class='nav-container'>
     <div class='top-nav-wrap'>
-      <a href='/' class='logo whitespace-nowrap'>
+      <a href='/' class='logo whitespace-nowrap flex items-center gap-5'>
         {
-          LOGO_IMAGE.enable ? (
-            <div class='flex size-12 items-center gap-5 md:size-full'>
-              <Image
-                src={logo}
-                alt={SITE.title}
-                width={LOGO_IMAGE.width}
-                height={LOGO_IMAGE.height}
-              />
-            </div>
-          ) : (
-            SITE.title
+          LOGO_IMAGE.enable && (
+            <Image
+              class='size-14'
+              src={logo}
+              alt={SITE.title}
+              width={LOGO_IMAGE.width}
+              height={LOGO_IMAGE.height}
+            />
           )
         }
+        <div aria-hidden='true' class='hidden md:block'>{SITE.title}</div>
       </a>
       <nav id='nav-menu'>
         <button
@@ -131,7 +129,7 @@ import logo from '../../public/assets/logo-full.svg';
     @apply mx-auto flex max-w-6xl flex-col items-center justify-between sm:flex-row;
   }
   .top-nav-wrap {
-    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
+    @apply relative flex w-full items-start justify-between p-4 items-center py-8;
   }
   .logo {
     @apply absolute py-1 text-xl font-semibold sm:static sm:text-2xl;

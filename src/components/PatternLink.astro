@@ -2,14 +2,36 @@
 import { Icon } from 'astro-icon/components';
 
 interface Props {
-  link: string;
+  ribblrLink?: string;
+  etsyLink?: string;
+  ravelryLink?: string;
 }
-const { link } = Astro.props;
+const { ribblrLink, etsyLink, ravelryLink } = Astro.props;
 ---
 
 <p>
-  Want to make it yourself?
-  <a href={link} target='_blank'>
-    Get the pattern<Icon class='size-3 align-super' name='mdi:external-link' />
-  </a>
+  Want to make it yourself? Get the pattern on:
+  {
+    ribblrLink && (
+      <a href={ribblrLink} target='_blank' class='mx-1'>
+        | Ribblr |
+      </a>
+    )
+  }
+
+  {
+    etsyLink && (
+      <a href={etsyLink} target='_blank' class='mx-1'>
+        | Etsy |
+      </a>
+    )
+  }
+
+  {
+    ravelryLink && (
+      <a href={ravelryLink} target='_blank' class='mx-1'>
+        | Ravelry |
+      </a>
+    )
+  }
 </p>

@@ -76,24 +76,14 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           <ul class='portfolio'>
             {sortedPortfolio.map(
               ({ data, slug }, index) =>
-                index < 4 &&
-                // eager load above the fold
-                (index < 2 ? (
-                  <Card
-                    href={`/portfolio/${slug}/`}
-                    frontmatter={data}
-                    secHeading={false}
-                    details={false}
-                    eager
-                  />
-                ) : (
+                index < 4 && (
                   <Card
                     href={`/portfolio/${slug}/`}
                     frontmatter={data}
                     secHeading={false}
                     details={false}
                   />
-                ))
+                )
             )}
           </ul>
           <div class='all-posts-btn-wrapper'>

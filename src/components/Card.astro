@@ -9,10 +9,9 @@ export interface Props {
   frontmatter: CollectionEntry<'posts' | 'portfolio'>['data'];
   secHeading?: boolean;
   details?: boolean;
-  eager?: boolean;
 }
 
-const { href, frontmatter, secHeading, details, eager = false } = Astro.props;
+const { href, frontmatter, secHeading, details } = Astro.props;
 const { title, pubDatetime, modDatetime, description, cover, coverAlt } =
   frontmatter;
 
@@ -48,11 +47,7 @@ const headerProps = {
   {
     cover && coverAlt && (
       <a href={href} class='prose'>
-        <ImageWrap
-          loading={eager ? 'eager' : 'lazy'}
-          src={cover}
-          alt={coverAlt}
-        />
+        <ImageWrap src={cover} alt={coverAlt} />
       </a>
     )
   }

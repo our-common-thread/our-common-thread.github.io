@@ -26,11 +26,13 @@ const { currentPage, totalPages, paginatedPosts, collectionType } = Astro.props;
     <ul class={collectionType === 'portfolio' ? 'portfolio' : null}>
       {
         paginatedPosts.map(({ data, slug, collection }: any, index: number) =>
+          // eager load any images above the fold
           index < 2 ? (
             <Card
               href={`/${collection}/${slug}/`}
               frontmatter={data}
               details={collectionType !== 'portfolio'}
+              eager={true}
             />
           ) : (
             <Card

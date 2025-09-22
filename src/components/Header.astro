@@ -16,11 +16,12 @@ import logo from '../../public/assets/logo-mini.svg';
   <a id='skip-to-content' href='#main-content'>Skip to content</a>
   <div class='nav-container'>
     <div class='top-nav-wrap'>
-      <a href='/' class='logo whitespace-nowrap flex items-center gap-5'>
+      <a href='/' class='logo flex items-center gap-5 whitespace-nowrap'>
         {
           LOGO_IMAGE.enable && (
             <Image
-              class='size-14'
+              aria-hidden='true'
+              class='hidden size-14 md:flex'
               src={logo}
               alt={SITE.title}
               width={LOGO_IMAGE.width}
@@ -28,7 +29,7 @@ import logo from '../../public/assets/logo-mini.svg';
             />
           )
         }
-        <div aria-hidden='true' class='hidden md:block'>{SITE.title}</div>
+        <div>{SITE.title}</div>
       </a>
       <nav id='nav-menu'>
         <button
@@ -125,14 +126,11 @@ import logo from '../../public/assets/logo-mini.svg';
   #skip-to-content {
     @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
   }
-  .nav-container {
-    @apply mx-auto flex max-w-6xl flex-col items-center justify-between sm:flex-row;
-  }
   .top-nav-wrap {
-    @apply relative flex w-full items-start justify-between p-4 items-center py-8;
+    @apply relative flex w-full justify-between p-4 py-8 sm:flex-col;
   }
   .logo {
-    @apply absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
+    @apply flex justify-center py-2 text-xl font-semibold sm:text-2xl;
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;
@@ -142,7 +140,7 @@ import logo from '../../public/assets/logo-mini.svg';
   }
 
   nav {
-    @apply flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
+    @apply flex flex-col sm:flex-row sm:justify-center;
   }
   nav ul {
     @apply mt-4 grid w-44 grid-cols-2 grid-rows-4 gap-x-2 gap-y-2 sm:ml-0 sm:mt-0 sm:w-auto sm:gap-x-5 sm:gap-y-0;

@@ -1,0 +1,132 @@
+---
+import Socials from '@components/Socials.astro';
+import Patterns from '@components/Patterns.astro';
+import { SOCIALS } from '@config';
+import Layout from '@layouts/Layout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import Hr from '@components/Hr.astro';
+
+const socialCount = SOCIALS.filter(social => social.active).length;
+---
+
+<Layout>
+  <Header />
+  <main id='main-content'>
+    <section id='hero'>
+      <p class='mt-2'>
+        Welcome! I'm Beans, the fiber artist behind Our Common Thread. Enjoy
+        this collection of my latest works and creative endeavors.
+      </p>
+      {
+        // only display if at least one social link is enabled
+        socialCount > 0 && (
+          <div class='social-wrapper'>
+            <div class='social-links'>Social Link{socialCount > 1 && 's'}:</div>
+            <Socials />
+          </div>
+        )
+      }
+      <div class='social-wrapper'>
+        <div class='social-links'>Patterns:</div>
+        <Patterns />
+      </div>
+    </section>
+    <Hr />
+    <section id='about'>
+      <h1>Fiber Arts</h1>
+      <p>
+        Fiber art techniques I have experience with:
+        <ul>
+          <li>Crochet</li>
+          <li>Cross Stitch</li>
+          <li>Embroidery</li>
+          <li>Visible Mending</li>
+          <li>Knitting</li>
+          <li>Sewing</li>
+        </ul>
+      </p>
+      <h1>Sustainability</h1>
+      <p>
+        Sustainability is also an important part of my practice. When possible,
+        materials and tools are sourced second hand, with some sources including
+        local nonprofits such as
+        <a
+          class='underline'
+          target='_blank'
+          href='https://www.seattlerecreative.org'>Seattle ReCreative</a
+        >. All materials are lovingly hand washed in preparation for their new
+        life. Yarn scraps are collected and used with polyfill stuffing for
+        products that need filling. The scraps are prioritized for use in test
+        and personal products. The fiber / fashion industry is known to create a
+        lot of waste, and I look to reduce this burden wherever possible.
+      </p>
+
+      <h1>Commissions</h1>
+
+      I am currently open for select commissions! Send me an email at
+      our.common.thread.art@gmail.com.
+
+      <h1>Upcoming Markets</h1>
+
+      <p class='pb-2'>-- No Current Upcoming Events --</p>
+      <p>
+        For the most up-to-date information check out my <a
+          class='underline'
+          href='https://www.instagram.com/our.common.thread/'
+          rel='nofollow'
+        >
+          Instagram
+        </a>
+      </p>
+
+      <h1>Something Catch Your Eye?</h1>
+      <p>
+        Did you see something at a market recently that you wish you picked up?
+        Or maybe you want something in a different color? Reach out!
+        our.common.thread.art@gmail.com
+      </p>
+    </section>
+  </main>
+  <Footer />
+
+  <style>
+    #main-content {
+      @apply pb-10;
+    }
+
+    h1 {
+      @apply py-8 text-2xl font-bold underline;
+    }
+
+    ul {
+      @apply list-disc py-2 pl-5;
+    }
+    ul li {
+      @apply py-1;
+    }
+
+    /* ===== Hero Section ===== */
+    #hero {
+      @apply pb-6 pt-8;
+    }
+    #hero h1 {
+      @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+    }
+    #hero .rss-link {
+      @apply mb-6;
+    }
+    #hero .rss-icon {
+      @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+    }
+    #hero p {
+      @apply my-2;
+    }
+    .social-wrapper {
+      @apply flex flex-col sm:flex-row sm:items-center;
+    }
+    .social-links {
+      @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+    }
+  </style>
+</Layout>
